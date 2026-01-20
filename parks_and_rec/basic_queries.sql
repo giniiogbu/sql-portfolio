@@ -1,20 +1,41 @@
--- Parks and Recreation Database
--- Basic SQL Queries
+-- Parks and Recreation SQL Practice
+-- Dataset: Parks and Recreation
+-- Author: Ginikachi Ogbu
+-- Description: Basic SQL queries to explore the dataset
 
--- View all employees
-SELECT *
-FROM employee;
-
--- View employee names and departments
-SELECT name, department_name
-FROM employee;
-
--- Employees in the Parks department
+-- View first 10 rows from employees table
 SELECT *
 FROM employee
-WHERE department_name = 'Parks';
+LIMIT 10;
 
--- Sort employees by salary (highest first)
-SELECT *
+-- Select specific columns
+SELECT
+    first_name,
+    last_name,
+    department
+FROM employee;
+
+-- Filter employees by department
+SELECT
+    first_name,
+    last_name,
+    department
 FROM employee
-ORDER BY salary DESC;
+WHERE department = 'Parks';
+
+-- Employees hired after 2015
+SELECT
+    first_name,
+    last_name,
+    hire_date
+FROM employee
+WHERE hire_date > '2015-01-01';
+
+-- Sort employees by hire date (newest first)
+SELECT
+    first_name,
+    last_name,
+    hire_date
+FROM employee
+ORDER BY hire_date DESC;
+
